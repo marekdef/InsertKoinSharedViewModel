@@ -26,9 +26,9 @@ class Fragment2 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewModel.random.observe(viewLifecycleOwner) {
             simpleFragmentBinding.textView.text = it.toString()
-            simpleFragmentBinding.button.setOnClickListener {
-                viewModel.random()
-            }
+        }
+        simpleFragmentBinding.button.setOnClickListener {
+            viewModel.random()
         }
     }
 }

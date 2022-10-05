@@ -14,7 +14,7 @@ class Fragment3 : Fragment() {
     val viewModel: MainViewModel by lazy {
         getSharedStateViewModel(
             // owner = {requireParentFragment()}
-            // clazz = MainViewModel::class
+            clazz = MainViewModel::class
         )
     }
 
@@ -28,9 +28,10 @@ class Fragment3 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewModel.random.observe(viewLifecycleOwner) {
             simpleFragmentBinding.textView.text = it.toString()
-            simpleFragmentBinding.button.setOnClickListener {
-                viewModel.random()
-            }
+        }
+
+        simpleFragmentBinding.button.setOnClickListener {
+            viewModel.random()
         }
     }
 }

@@ -15,7 +15,7 @@ class MainFragment: Fragment() {
     val viewModel: MainViewModel by lazy {
         getSharedStateViewModel(
             // owner = {this},
-            clazz = MainViewModel::class
+            // clazz = MainViewModel::class
         )
     }
 
